@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Outfit:wght@100..900&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'outfit';
+  margin: auto;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y:scroll;
 }
 
 .App-logo {
@@ -14,7 +22,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #F0EAD2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +30,99 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  .front {
+    height: 90vh;
+
+    .left {
+      position: absolute;
+      width: 35%;
+      height:100%;
+      /* background-color:red; */
+      padding: 20px;
+      padding-top: 40px;
+      text-align: left;
+      float: left;
+      margin-left: 5vw;
+
+      .text{
+        position:absolute;
+        top:20%;
+      }
+
+      .text2 {
+        margin-left: 5vw;
+        width: 100%;
+        font-weight: 500;
+      }
+
+      .text3 {
+        margin-left: 10vw;
+      }
+
+      h2 {
+        font-family: 'outfit';
+        font-size: 3vw;
+        font-weight: 500;
+      }
+
+      button {
+        /* position:absolute; */
+        bottom: 0;
+        margin: auto;
+        display: block;
+        margin-top: 5vh;
+
+        box-sizing: border-box;
+
+        background: #DCE4B8;
+        border: 3px solid #4F5933;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        color: #4F5933;
+      }
+
+      button:hover {
+        background-color: transparent;
+      }
+    }
+
+    .right {
+      position: relative;
+      float: right;
+      margin-right: 5vw;
+      width: 65%;
+      bottom: 0;
+
+      .img-fluid {
+        position: relative;
+        object-fit: cover;
+        float: right;
+        margin-left: 20vw;
+        height: 80vh;
+      }
+    }
+  }
+
+  .mission {
+    text-align:center;
+    display:inline-block;
+    margin:auto;
+    width:80%;
+    h1 {
+      font-family: 'original surfer';
+      font-size: 5rem;
+      color: #ADC178;
+    }
+    .indent{
+      text-indent: 50px;
+    }
+    p{
+      padding:15px;
+      text-align:left;
+      color:black;
+    }
+  }
 }
 
 .App-link {
@@ -32,6 +133,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

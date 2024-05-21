@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Outfit:wght@100..900&display=swap');
+
+nav {
+  z-index:1;
+  position:sticky;
+  top:0;
+  background-color:#F0EAD2;
+  /* background-color:red; */
+  color: #ADC178;
+  width: 100%;
+
+  .logo{
+    position:relative;
+    left:0;
+    width:100%;
+    max-width:20%;
+
+    h1{
+      font-family:"original surfer";
+    }
+  }
+
+  .pages{
+    position:relative;
+    width:100%;
+    max-width:80%;
+    float:right;
+    display:inline-flex;
+    vertical-align:middle;
+    margin:auto;
+    /* background-color:red; */
+
+    li{
+      list-style: none;
+      padding:20px 20px 20px;
+      text-align:center;
+      font-size: 1.3rem;
+    }
+
+    li:hover{
+      text-decoration-line:underline;
+      text-underline-offset: 2vh;
+      cursor:pointer;
+    }
+  
+    a {
+      /* color: #fff; */
+      /* margin-right: 10px; */
+      text-decoration: none;
+      color: #ADC178;
+    }
+    a:active{
+      text-decoration:none;
+      color: #ADC178;
+    }
+  }
+
+}
+
+/* Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
