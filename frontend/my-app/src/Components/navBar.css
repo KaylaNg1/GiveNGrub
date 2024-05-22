@@ -2,11 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&family=Outfit:wght@100..900&display=swap');
 
 nav {
-  z-index:1;
-  position:sticky;
+  z-index:5;
+  position:fixed;
   top:0;
   background-color:#F0EAD2;
-  /* background-color:red; */
   color: #ADC178;
   width: 100%;
 
@@ -18,6 +17,12 @@ nav {
 
     h1{
       font-family:"original surfer";
+      text-decoration:none;
+      color: #ADC178;
+    }
+
+    .test{
+      text-decoration-color:transparent;
     }
   }
 
@@ -29,7 +34,6 @@ nav {
     display:inline-flex;
     vertical-align:middle;
     margin:auto;
-    /* background-color:red; */
 
     li{
       list-style: none;
@@ -51,6 +55,11 @@ nav {
       color: #ADC178;
     }
     a:active{
+      text-decoration:none;
+      color: #ADC178;
+    }
+
+    Link:active{
       text-decoration:none;
       color: #ADC178;
     }

@@ -1,19 +1,17 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './navBar.css';
 import 'bootstrap/dist/css/bootstrap.css';
-// import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-function Navbar() {
+const Navbar = () => {
   return (
     <nav class="navbar navbar-light">
       <div class="logo">
-        <h1>GroDonor</h1>
+        <Link to="/" className = "test"><h1>GiveNGrub</h1></Link>
       </div>
       <div class="pages">
-        <a href="#mission"><li>mission</li></a>
-        <a href="Receipt.js"><li>receipts</li></a>
+        <a href = "#mission"><li id = "missionLink">mission</li></a>
+        <Link to="/receipt"><li id = "receiptLink">receipts</li></Link>
         <li to="/">groceries</li>
         <li to="/">locals</li>
         <li to="/">meals</li>

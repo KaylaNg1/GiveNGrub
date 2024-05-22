@@ -1,22 +1,56 @@
 import './Receipt.css';
-import React from "react";
+import React,  {useState} from "react";
 import Navbar from '../Components/navBar';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ElementPricingCard } from "../Components/receiptCard";
+import { Link } from "react-router-dom";
+//popular JavaScript library used for making HTTP requests from web browsers and 
+// Node.js. It simplifies the process of making asynchronous HTTP requests to REST endpoints 
+//and interacting with APIs
+import axios from 'axios'; 
 
-export const Receipts = () => {
+export default function Receipts() {
+  const [file, setFile] = useState()
+
+  function handleChange(event) {
+    setFile(event.target.files[0])
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault()
+    const url = 'http://localhost:3000/uploadFile';
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('fileName', file.name);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+    axios.post(url, formData, config).then((response) => {
+      console.log(response.data);
+    });
+
+  }
   return (
     <div className="receipts">
-      <div className="div-2">
-      <Navbar></Navbar>
-        <div className="text-wrapper-9">Upload Receipt</div>
-        <div className="overlap-group">
-          <button className="element-button">
-            <div className="text-wrapper-10">Upload</div>
-          </button>
-          <div className="text-wrapper-11">or drop file in</div>
+      <Navbar />
+      <div className="body">
+        <div className="upload">
+          <h1>Upload Receipt</h1>
+          <div className="overlap-group">
+            <div className = "content">
+              <form onSubmit={handleSubmit}>
+                <button className="element-button">
+                  <h3>Upload</h3>
+                </button>
+                <h3 id = "file-drop">or drop file in</h3>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className="text-wrapper-12">Past Receipts</div>
+      </div>
+      {/* <div className="text-wrapper-12">Past Receipts</div>
         <div className="overlap">
           <div className="element-pricing-card-2">
             <div className="header-2">
@@ -36,8 +70,8 @@ export const Receipts = () => {
             </button>
           </div>
           <ElementPricingCard className="sixteen-pricing-card" />
-        </div>
-        <div className="element-pricing-card-3">
+        </div> */}
+      {/*<div className="element-pricing-card-3">
           <div className="header-2">
             <div className="text-wrapper-13">5/3/24</div>
             <div className="div-wrapper">
@@ -88,9 +122,7 @@ export const Receipts = () => {
             <div className="text-wrapper-17">Button</div>
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
-
-export default Receipts;
