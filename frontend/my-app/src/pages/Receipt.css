@@ -51,11 +51,12 @@
 
         .element-button{
           background-color:#DCE4B8;
-          border-style: 2px solid #4F5933;
           border-radius: 25px;
           width: fit-content;
           padding:5px 5vw;
           text-align: center;
+          background: #DCE4B8;
+          border: 3px solid #4F5933;
         }
 
         .element-button:hover{
