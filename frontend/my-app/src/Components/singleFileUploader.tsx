@@ -14,10 +14,10 @@ const SingleFileUploader = () => {
   const handleUpload = async () => {
     if (file) {
       console.log("Uploading file...");
-  
+
       const formData = new FormData();
       formData.append("file", file);
-  
+
       try {
         // You can write the URL of your server or any other endpoint used for file upload
         console.log("in try catch")
@@ -25,9 +25,9 @@ const SingleFileUploader = () => {
           method: "POST",
           body: formData,
         });
-  
+
         const data = await result.json();
-  
+
         console.log(data);
       } catch (error) {
         console.error(error);
@@ -37,14 +37,14 @@ const SingleFileUploader = () => {
 
   return (
     <>
-      <div className = "fileInput">
+      <div className="fileInput">
         <input id="file" type="file" onChange={handleFileChange} />
       </div>
       {/* file && is used to conditionally render certain parts of UI only if state is true */}
       {file && (
         <section>
           File details:
-          <ul id = "fileDescription">
+          <ul id="fileDescription">
             <li>Name: {file.name}</li>
             <li>Type: {file.type}</li>
             <li>Size: {file.size} bytes</li>
