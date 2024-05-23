@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Navbar from '../Components/navBar'
 import Receipts from './Receipt'
 import coverArt from '../media/coverArt.png'
-import { Routes, Route, Router, Switch } from "react-router-dom";
+import { Routes, Route, Router } from "react-router-dom";
 import './Home.css';
 
 function Home() {

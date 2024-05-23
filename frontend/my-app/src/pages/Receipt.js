@@ -1,37 +1,17 @@
 import './Receipt.css';
-import React,  {useState} from "react";
+import React, { useState } from "react";
 import Navbar from '../Components/navBar';
+import z from '../Components/singleFileUploader';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ElementPricingCard } from "../Components/receiptCard";
 import { Link } from "react-router-dom";
 //popular JavaScript library used for making HTTP requests from web browsers and 
 // Node.js. It simplifies the process of making asynchronous HTTP requests to REST endpoints 
 //and interacting with APIs
-import axios from 'axios'; 
+import axios from 'axios';
+import SingleFileUploader from '../Components/singleFileUploader';
 
 export default function Receipts() {
-  const [file, setFile] = useState()
-
-  function handleChange(event) {
-    setFile(event.target.files[0])
-  }
-  
-  function handleSubmit(event) {
-    event.preventDefault()
-    const url = 'http://localhost:3000/uploadFile';
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('fileName', file.name);
-    const config = {
-      headers: {
-        'content-type': 'multipart/form-data',
-      },
-    };
-    axios.post(url, formData, config).then((response) => {
-      console.log(response.data);
-    });
-
-  }
   return (
     <div className="receipts">
       <Navbar />
@@ -39,13 +19,12 @@ export default function Receipts() {
         <div className="upload">
           <h1>Upload Receipt</h1>
           <div className="overlap-group">
-            <div className = "content">
-              <form onSubmit={handleSubmit}>
-                <button className="element-button">
-                  <h3>Upload</h3>
-                </button>
-                <h3 id = "file-drop">or drop file in</h3>
-              </form>
+            <SingleFileUploader/>
+            <div className="content">
+              {/* <button className="element-button">
+                <h3>Upload</h3>
+              </button> */}
+              <h3 id="file-drop">or drop file in</h3>
             </div>
           </div>
         </div>
