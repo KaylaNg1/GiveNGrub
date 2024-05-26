@@ -2,10 +2,12 @@ from flask import Flask, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 import os
 from flask_cors import CORS
+from textParse import textParse
 
 app = Flask(__name__, static_folder = '../frontend/public')
-# CORS(app, resources={r"/upload": {"origins": "http://localhost:3000"}})
+
 CORS(app)
+
 # Define the upload folder (where the files will be stored)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -20,7 +22,6 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    print("has entered endpoint")
     if 'file' not in request.files:
         return 'No file part'
 
@@ -31,6 +32,10 @@ def upload_file():
 
     filename = secure_filename(file.filename)
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    
+    # running file through text Parser
+    print("filename: " + str(filename))
+    textParse(filename)
     return jsonify({'message': 'File uploaded successfully'})
 
 if __name__ == '__main__':

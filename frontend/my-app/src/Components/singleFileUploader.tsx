@@ -1,3 +1,4 @@
+// Reference: https://uploadcare.com/blog/how-to-upload-file-in-react/
 import React, { useState } from "react";
 import './fileUpload.css'
 
